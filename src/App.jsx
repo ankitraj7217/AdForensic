@@ -1,9 +1,7 @@
 import './App.css'
-import Advertiser from './Components/Advertiser'
-import FlieUpload from './Components/FileUpload'
-import LineGraph from './Components/LineGraph'
 import AdvertiserContextProvider from './Contexts/Advertiser.context'
 import CountriesContextProvider from './Contexts/Countries.context'
+import GraphOrchestrator from './Orchestrator/GraphOrchestrator'
 
 function App() {
 
@@ -11,8 +9,7 @@ function App() {
     <>
       <AdvertiserContextProvider>
         <CountriesContextProvider>
-          <FlieUpload />
-          <Advertiser />
+          <GraphOrchestrator />
         </CountriesContextProvider>
       </AdvertiserContextProvider>
     </>
