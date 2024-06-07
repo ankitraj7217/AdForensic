@@ -1,10 +1,13 @@
 import "./App.css";
+import TranslationContextProvider from "./Contexts/Translation.provider";
 import GraphOrchestrator from "./Orchestrator/GraphOrchestrator";
 
 function App() {
   return (
     <>
-      <GraphOrchestrator />
+      <TranslationContextProvider>
+        <GraphOrchestrator />
+      </TranslationContextProvider>
     </>
   );
 }

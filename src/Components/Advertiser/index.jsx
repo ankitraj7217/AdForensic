@@ -2,22 +2,24 @@ import React from "react";
 import CustomLineGraph from "../CustomLineGraph";
 import { _generateAdvertiserGraphData } from "../../Utils/advertiserUtils";
 import CustomBarGraph from "../CustomBarGraph";
+import { useTranslationContext } from "../../Contexts/Translation.provider";
 
 const Advertiser = ({advertiserData}) => {
+  const { t } = useTranslationContext();
 
   const lineGraphImpressions = _generateAdvertiserGraphData(
     advertiserData,
-    "Line Graph - Impressions",
+    `${t("LINE_GRAPH")} - ${t("IMPRESSIONS")}`,
     "impressions"
   );
   const lineGraphClicks = _generateAdvertiserGraphData(
     advertiserData,
-    "Line Graph - Clicks",
+    `${t("LINE_GRAPH")} - ${t("CLICKS")}`,
     "clicks"
   );
   const barGraohCtr = _generateAdvertiserGraphData(
     advertiserData,
-    "Bar Graph - Ctr",
+    `${t("BAR_GRAPH")} - ${t("CTR")}`,
     "ctr"
   );
 

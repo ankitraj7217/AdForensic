@@ -3,8 +3,10 @@ import { usePapaParse } from "react-papaparse";
 import { handleFileUploadGeneric } from "../../Utils/fileUploadUtils";
 import "./FileUpload.scss";
 import CustomError from "../CustomError";
+import { useTranslationContext } from "../../Contexts/Translation.provider";
 
-const FlieUpload = ({setAdvertiserData, setCountriesData}) => {
+const FlieUpload = ({ setAdvertiserData, setCountriesData }) => {
+  const { t } = useTranslationContext();
   const [disableCountriesUpload, setDisableCountriesUpload] = useState(true);
   const [showError, setShowError] = useState(false);
   const { readString } = usePapaParse();
@@ -44,7 +46,7 @@ const FlieUpload = ({setAdvertiserData, setCountriesData}) => {
         valueType,
         setCountriesData
       );
-    } catch(e) {
+    } catch (e) {
       setShowError(true);
     }
   };
@@ -57,7 +59,7 @@ const FlieUpload = ({setAdvertiserData, setCountriesData}) => {
         setShowError={setShowError}
         disappearTime={4000}
       />
-      <h2 className="file-upload__title">Advertiser Data</h2>
+      <h2 className="file-upload__title">{t("ADVERTISER_DATA")}</h2>
       <input
         type="file"
         accept=".csv"
@@ -65,7 +67,7 @@ const FlieUpload = ({setAdvertiserData, setCountriesData}) => {
         onChange={handleFileUploadAdvertiser}
       />
 
-      <h2 className="file-upload__title">Countries Data</h2>
+      <h2 className="file-upload__title">{t("COUNTRIES_DATA")}</h2>
       <input
         type="file"
         accept=".csv"

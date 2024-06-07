@@ -3,16 +3,18 @@ import { PieChart, ResponsiveContainer, Pie, Tooltip, Legend } from "recharts";
 import CustomTooltip from "../CustomTooltip";
 import { GRAPH_COLOR } from "../../Constants/colors";
 import CustomLegend from "../CustomLegend";
+import { useTranslationContext } from "../../Contexts/Translation.provider";
 
 const renderCustomLegend = (colors) => {
   <div></div>;
 };
 
 const CustomPieChart = ({ data, radiusObj = [] }) => {
+  const { t } = useTranslationContext();
   
   return (
     <>
-      <h3>Pie Chart</h3>
+      <h3>{t("PIE_CHART")}</h3>
       <ResponsiveContainer
         width="100%"
         height="100%"

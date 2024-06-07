@@ -9,8 +9,10 @@ import { organizeDataByAdvertiser } from "../../Utils/countriesUtils";
 
 import "./GraphOrchestrator.scss";
 import { ADVERTISERS_DATA, COUNTRIES_DATA } from "../../Data/sampleData";
+import { useTranslationContext } from "../../Contexts/Translation.provider";
 
 const GraphOrchestrator = () => {
+  const { t } = useTranslationContext();
   const [advertiserData, setAdvertiserData] = useState(ADVERTISERS_DATA);
   const [countriesData, setCountriesData] = useState(COUNTRIES_DATA);
 
@@ -32,7 +34,7 @@ const GraphOrchestrator = () => {
     <main className="graph-orchestrator">
       <section className="graph-orchestrator-input">
         <CustomSelect
-          heading={"Select Advertiser"}
+          heading={t("SELECT_ADVERTISER")}
           options={options}
           rootOptionsMessage="Select AdvertiserName"
           currOption={advertiserName}
