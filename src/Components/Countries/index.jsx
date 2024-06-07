@@ -10,7 +10,6 @@ const Countries = ({ countriesData }) => {
 
   return (
     <section className="countries">
-      Countries
       <CustomPieChart data={countriesData} radiusObj={randomRadiusObj} />
     </section>
   );
