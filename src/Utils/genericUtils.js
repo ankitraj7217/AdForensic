@@ -1,53 +1,22 @@
-export const formatDate = (dateString) => {
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
+import { filterByDateRange } from "./advertiserUtils";
 
-  const [year, month, day] = dateString.split('-').map(Number)
-  const monthName = months[month - 1] // Months are zero-based in JavaScript
+export const generateRandomHexColor = () => {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+};
 
-  return `${monthName} ${day}`
-}
+export const filterByAdvertiser = (array, filterValue) => {
+  if (!filterValue || filterValue === "All") return array;
+  return array?.filter((data) => data?.advertiser === filterValue);
+};
 
-export const sumByKey = (array, keyToGroupBy, keyToSum) => {
-  const resultMap = new Map()
+export const filterData = (array, filterAdvertiserValue, dateRange) => {
+  return filterByDateRange(
+    filterByAdvertiser(array, filterAdvertiserValue),
+    "date",
+    dateRange
+  );
+};
 
-  // Iterate over the array to sum values based on the group key
-  array.forEach((item) => {
-    const groupByKey = item[keyToGroupBy]
-    const valueToSum = item[keyToSum]
-
-    // If the group already exists in the map, add the value to it
-    if (resultMap.has(groupByKey)) {
-      resultMap.set(groupByKey, resultMap.get(groupByKey) + valueToSum)
-    } else {
-      // Otherwise, initialize it with the value
-      resultMap.set(groupByKey, valueToSum)
-    }
-  })
-
-  // Convert the map to an array of objects
-  const resultArray = Array.from(resultMap, ([group, value]) => ({
-    [keyToGroupBy]: group,
-    [keyToSum]: value,
-  }))
-
-  return resultArray
-}
-
-export const filterByKey = (array, filterKey, filterValue) => {
-  const filteredArray = array.filter((item) => item[filterKey] === filterValue)
-
-  return filteredArray
-}
+export const getAdvertiserNames = (array) => {
+  return ["All", ...Array.from(new Set(array?.map((ele) => ele.advertiser)))];
+};
