@@ -32,6 +32,7 @@ const GraphOrchestrator = () => {
     <main className="graph-orchestrator">
       <section className="graph-orchestrator-input">
         <CustomSelect
+          heading={"Select Advertiser"}
           options={options}
           rootOptionsMessage="Select AdvertiserName"
           currOption={advertiserName}
@@ -45,7 +46,10 @@ const GraphOrchestrator = () => {
           disableEndDate={disableEndDate}
           setDisableEndDate={setDisableEndDate}
         />
-        <FlieUpload setAdvertiserData={setAdvertiserData} setCountriesData={setCountriesData} />
+        <FlieUpload
+          setAdvertiserData={setAdvertiserData}
+          setCountriesData={setCountriesData}
+        />
       </section>
       <section className="graph-orchestrator-display">
         <Advertiser advertiserData={filteredAdvertiserData} />
