@@ -16,8 +16,8 @@ const CustomPieChart = ({ data, radiusObj = [] }) => {
       <ResponsiveContainer
         width="100%"
         height="100%"
-        minWidth={`500px`}
-        minHeight={`300px`}
+        minWidth={`600px`}
+        minHeight={`400px`}
       >
         <PieChart width={400} height={400}>
           <Tooltip
