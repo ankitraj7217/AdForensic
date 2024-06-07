@@ -1,35 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
+import "./CustomSelect.scss";
 
 const CustomSelect = ({
   options = [],
   rootOptionsMessage = "Select an option",
   currOption = "",
   setOption = (value) => {},
-  customStyle = {},
 }) => {
-
   const _onChangeOption = (e) => {
     const currentValue = e.target.value;
     setOption(currentValue);
   };
 
   return (
-    <select
-      value={currOption}
-      onChange={_onChangeOption}
-      style={{ ...customStyle }}
-    >
-      <option value="" hidden>
-        {rootOptionsMessage}
-      </option>
-      {options.map((value, idx) => {
-        return (
+    <div className="custom-select">
+      <select
+        value={currOption}
+        onChange={_onChangeOption}
+        className="custom-select__select"
+      >
+        <option value="" hidden>
+          {rootOptionsMessage}
+        </option>
+        {options.map((value, idx) => (
           <option value={value} key={idx}>
             {value}
           </option>
-        );
-      })}
-    </select>
+        ))}
+      </select>
+      <div className="custom-select__arrow">&#9660;</div>
+    </div>
   );
 };
 

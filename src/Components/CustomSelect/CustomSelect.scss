@@ -1,0 +1,24 @@
+.custom-select {
+  position: relative;
+  width: fit-content;
+
+  &__select {
+    width: 15rem;
+    height: 3.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding-block: 1rem;
+    padding-inline: 0.5rem;
+    font-size: 1rem;
+    appearance: none; /* Remove default arrow */
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+  }
+}
