@@ -9,7 +9,7 @@ const renderCustomLegend = (colors) => {
 };
 
 const CustomPieChart = ({ data, radiusObj = [] }) => {
-  console.log("pie chart: ", Object.keys(data), radiusObj);
+  
   return (
     <>
       <h3>Pie Chart</h3>

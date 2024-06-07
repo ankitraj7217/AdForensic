@@ -49,7 +49,6 @@ export const filterByDateRange = (array, filterKey, filterRange) => {
     endDate < startDate
   )
     return array;
-  console.log(startDate, endDate);
   const filteredArray = array.filter((item) => {
     const itemDate = new Date(item[filterKey]);
     if (isNaN(itemDate.getTime())) throw new Error("Pass Date Params");
