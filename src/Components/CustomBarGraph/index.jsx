@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -7,17 +7,12 @@ import {
   YAxis,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts'
-import CustomTooltip from '../CustomTooltip';
+  ResponsiveContainer,
+} from "recharts";
+import CustomTooltip from "../CustomTooltip";
+import { GRAPH_COLOR } from "../../Constants/colors";
 
-const CustomBarGraph = ({
-  chartName,
-  data,
-  xAxisKey,
-  yAxisKeys,
-}) => {
-
+const CustomBarGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
   return (
     <>
       <h2>{chartName}</h2>
@@ -42,24 +37,20 @@ const CustomBarGraph = ({
             dataKey={xAxisKey}
             tick={{
               fontSize: 12,
-              fill: '#666',
-              textAnchor: 'middle',
+              fill: "#666",
+              textAnchor: "middle",
               dy: 10,
               width: 10,
             }}
           />
           <YAxis />
-          <Tooltip
-            content={
-              <CustomTooltip />
-            }
-          />
+          <Tooltip content={<CustomTooltip />} />
           <Legend />
-          {yAxisKeys.map((yAxisKey) => {
+          {yAxisKeys.map((yAxisKey, idx) => {
             return (
               <Bar
                 dataKey={yAxisKey}
-                fill="#8884d8"
+                fill={GRAPH_COLOR?.[idx] ?? "#8884d8"}
                 activeBar={<Rectangle fill="pink" stroke="blue" />}
                 key={yAxisKey}
               />
@@ -68,7 +59,7 @@ const CustomBarGraph = ({
         </BarChart>
       </ResponsiveContainer>
     </>
-  )
-}
+  );
+};
 
-export default CustomBarGraph
+export default CustomBarGraph;

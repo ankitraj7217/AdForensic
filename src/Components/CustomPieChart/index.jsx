@@ -1,15 +1,15 @@
 import React from "react";
 import { PieChart, ResponsiveContainer, Pie, Tooltip, Legend } from "recharts";
 import CustomTooltip from "../CustomTooltip";
+import { GRAPH_COLOR } from "../../Constants/colors";
+import CustomLegend from "../CustomLegend";
 
-const renderCustomLegend = () => (
-  <div>
-    Ankit Raj
-  </div>
-);
+const renderCustomLegend = (colors) => {
+  <div></div>;
+};
 
-const CustomPieChart = ({ data, radiusObj=[] }) => {
-  
+const CustomPieChart = ({ data, radiusObj = [] }) => {
+  console.log("pie chart: ", Object.keys(data), radiusObj);
   return (
     <>
       <h3>Pie Chart</h3>
@@ -20,23 +20,31 @@ const CustomPieChart = ({ data, radiusObj=[] }) => {
         minHeight={`300px`}
       >
         <PieChart width={400} height={400}>
-          <Tooltip content={<CustomTooltip keys={["country", "impressions"]} />} />
-          <Legend content={renderCustomLegend} />
-          {
-            radiusObj.map((obj) => {
-              return <Pie
+          <Tooltip
+            content={<CustomTooltip keys={["country", "impressions"]} />}
+          />
+          <Legend
+            content={
+              <CustomLegend
+                colors={GRAPH_COLOR.slice(0, radiusObj.length)}
+                tags={Object.keys(data)}
+              />
+            }
+          />
+          {radiusObj.map((obj, idx) => {
+            return (
+              <Pie
                 data={data?.[obj?.key]}
                 dataKey="impressions"
                 cx="50%"
                 cy="50%"
                 innerRadius={obj?.innerRadius}
                 outerRadius={obj?.outerRadius}
-                fill={obj?.color}
+                fill={GRAPH_COLOR?.[idx] ?? obj?.color}
                 key={obj?.key}
-            />
-            })
-          }
-          
+              />
+            );
+          })}
         </PieChart>
       </ResponsiveContainer>
     </>

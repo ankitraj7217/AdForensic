@@ -9,10 +9,9 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import CustomTooltip from "../CustomTooltip";
-
+import { GRAPH_COLOR } from "../../Constants/colors";
 
 const CustomLineGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
- 
   return (
     <>
       <h2>{chartName}</h2>
@@ -44,18 +43,14 @@ const CustomLineGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
             }}
           />
           <YAxis />
-          <Tooltip
-            content={
-              <CustomTooltip />
-            }
-          />
+          <Tooltip content={<CustomTooltip />} />
           <Legend />
-          {yAxisKeys.map((yAxisKey) => {
+          {yAxisKeys.map((yAxisKey, idx) => {
             return (
               <Line
                 type="monotone"
                 dataKey={yAxisKey}
-                stroke="#82ca9d"
+                stroke={GRAPH_COLOR?.[idx] ?? "#82ca9d"}
                 activeDot={{ r: 8 }}
                 key={yAxisKey}
               />
