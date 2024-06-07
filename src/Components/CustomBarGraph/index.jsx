@@ -61,6 +61,7 @@ const CustomBarGraph = ({
                 dataKey={yAxisKey}
                 fill="#8884d8"
                 activeBar={<Rectangle fill="pink" stroke="blue" />}
+                key={yAxisKey}
               />
             );
           })}

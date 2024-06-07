@@ -31,7 +31,8 @@ const CustomPieChart = ({ data, radiusObj=[] }) => {
                 cy="50%"
                 innerRadius={obj?.innerRadius}
                 outerRadius={obj?.outerRadius}
-                fill={obj.color}
+                fill={obj?.color}
+                key={obj?.key}
             />
             })
           }
