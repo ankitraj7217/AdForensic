@@ -1,0 +1,18 @@
+.custom-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-inline: 1rem;
+
+        &-color {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            margin-inline-end: 0.5rem;
+        }
+    }
+}
