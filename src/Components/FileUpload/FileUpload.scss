@@ -1,0 +1,15 @@
+.file-upload {
+  &__title {
+    margin-block-end: 0.5rem;
+  }
+
+  &__input {
+    width: 50%;
+    height: 2rem;
+    padding: 0.6rem 0.5rem 0rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    margin-block-end: 0.5rem;
+    cursor: pointer;
+  }
+}

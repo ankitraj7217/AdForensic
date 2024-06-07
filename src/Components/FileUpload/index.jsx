@@ -3,6 +3,7 @@ import { usePapaParse } from "react-papaparse";
 import { useAdvertiserContext } from "../../Contexts/Advertiser.context";
 import { useCountriesContext } from "../../Contexts/Countries.context";
 import { handleFileUploadGeneric } from "../../Utils/fileUploadUtils";
+import "./FileUpload.scss";
 
 const FlieUpload = () => {
   const { setAdvertiserData } = useAdvertiserContext();
@@ -37,34 +38,25 @@ const FlieUpload = () => {
       valueType,
       setCountriesData
     );
-
-    // reader.onload = (e) => {
-    //   const text = e.target?.result;
-    //   if (typeof text === "string") {
-    //     readString(text, {
-    //       complete: (results) => {
-    //         const extractedData = results.data
-    //           .slice(1)
-    //           .map((advertiserData) => ({
-    //             advertiser: String(advertiserData[0]),
-    //             impressions: Number(advertiserData[1]),
-    //             country: String(advertiserData[2]),
-    //           }));
-    //         setCountriesData(extractedData);
-    //       },
-    //     });
-    //   }
-    // };
-    // reader.readAsText(file);
   };
 
   return (
-    <div>
-      <h2>Advertiser Data</h2>
-      <input type="file" accept=".csv" onChange={handleFileUploadAdvertiser} />
+    <div className="file-upload">
+      <h2 className="file-upload__title">Advertiser Data</h2>
+      <input
+        type="file"
+        accept=".csv"
+        className="file-upload__input"
+        onChange={handleFileUploadAdvertiser}
+      />
 
-      <h2>Countries Data</h2>
-      <input type="file" accept=".csv" onChange={handleFileUploadCountries} />
+      <h2 className="file-upload__title">Countries Data</h2>
+      <input
+        type="file"
+        accept=".csv"
+        className="file-upload__input"
+        onChange={handleFileUploadCountries}
+      />
     </div>
   );
 };
