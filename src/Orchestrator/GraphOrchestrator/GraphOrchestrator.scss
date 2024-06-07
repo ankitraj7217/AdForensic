@@ -1,0 +1,15 @@
+.graph-orchestrator {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &-input {
+        width: 40%;
+        height: 100vh;
+        margin-block-start: 20%;
+    }
+
+    &-display {
+        width: 60%;
+    }
+}
