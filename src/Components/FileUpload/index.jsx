@@ -2,6 +2,7 @@ import React from "react";
 import { usePapaParse } from "react-papaparse";
 import { useAdvertiserContext } from "../../Contexts/Advertiser.context";
 import { useCountriesContext } from "../../Contexts/Countries.context";
+import { handleFileUploadGeneric } from "../../Utils/fileUploadUtils";
 
 const FlieUpload = () => {
   const { setAdvertiserData } = useAdvertiserContext();
@@ -11,53 +12,50 @@ const FlieUpload = () => {
   const handleFileUploadAdvertiser = (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
+    const keys = ["advertiser", "date", "impressions", "clicks", "ctr"];
+    const valueType = ["String", "String", "Number", "Number", "String"];
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = e.target?.result;
-      if (typeof text === "string") {
-        readString(text, {
-          complete: (results) => {
-            const extractedData = results.data
-              .slice(1)
-              .map((advertiserData) => ({
-                advertiser: String(advertiserData[0]),
-                date: advertiserData[1],
-                impressions: Number(advertiserData[2]),
-                clicks: Number(advertiserData[3]),
-                ctr: Number(advertiserData[4]),
-              }));
-            setAdvertiserData(extractedData);
-          },
-        });
-      }
-    };
-    reader.readAsText(file);
+    handleFileUploadGeneric(
+      file,
+      readString,
+      keys,
+      valueType,
+      setAdvertiserData
+    );
   };
 
   const handleFileUploadCountries = (event) => {
     const file = event.target.files?.[0];
     if (!file) return;
+    const keys = ["advertiser", "impressions", "country"];
+    const valueType = ["String", "Number", "String"];
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const text = e.target?.result;
-      if (typeof text === "string") {
-        readString(text, {
-          complete: (results) => {
-            const extractedData = results.data
-              .slice(1)
-              .map((advertiserData) => ({
-                advertiser: String(advertiserData[0]),
-                impressions: Number(advertiserData[1]),
-                country: String(advertiserData[2]),
-              }));
-            setCountriesData(extractedData);
-          },
-        });
-      }
-    };
-    reader.readAsText(file);
+    handleFileUploadGeneric(
+      file,
+      readString,
+      keys,
+      valueType,
+      setCountriesData
+    );
+
+    // reader.onload = (e) => {
+    //   const text = e.target?.result;
+    //   if (typeof text === "string") {
+    //     readString(text, {
+    //       complete: (results) => {
+    //         const extractedData = results.data
+    //           .slice(1)
+    //           .map((advertiserData) => ({
+    //             advertiser: String(advertiserData[0]),
+    //             impressions: Number(advertiserData[1]),
+    //             country: String(advertiserData[2]),
+    //           }));
+    //         setCountriesData(extractedData);
+    //       },
+    //     });
+    //   }
+    // };
+    // reader.readAsText(file);
   };
 
   return (
