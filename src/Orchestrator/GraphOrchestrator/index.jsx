@@ -1,19 +1,18 @@
 import React, { useMemo, useState } from "react";
 import CustomSelect from "../../Components/CustomSelect";
-import { useAdvertiserContext } from "../../Contexts/Advertiser.context";
 import Advertiser from "../../Components/Advertiser";
 import { filterData, getAdvertiserNames } from "../../Utils/genericUtils";
 import FlieUpload from "../../Components/FileUpload";
 import Countries from "../../Components/Countries";
 import StartEndDate from "../../Components/StartEndDate";
 import { organizeDataByAdvertiser } from "../../Utils/countriesUtils";
-import { useCountriesContext } from "../../Contexts/Countries.context";
 
 import "./GraphOrchestrator.scss";
+import { ADVERTISERS_DATA, COUNTRIES_DATA } from "../../Data/sampleData";
 
 const GraphOrchestrator = () => {
-  const { advertiserData } = useAdvertiserContext();
-  const { countriesData } = useCountriesContext();
+  const [advertiserData, setAdvertiserData] = useState(ADVERTISERS_DATA);
+  const [countriesData, setCountriesData] = useState(COUNTRIES_DATA);
 
   const [advertiserName, setAdvertiserName] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -46,7 +45,7 @@ const GraphOrchestrator = () => {
           disableEndDate={disableEndDate}
           setDisableEndDate={setDisableEndDate}
         />
-        <FlieUpload />
+        <FlieUpload setAdvertiserData={setAdvertiserData} setCountriesData={setCountriesData} />
       </section>
       <section className="graph-orchestrator-display">
         <Advertiser advertiserData={filteredAdvertiserData} />

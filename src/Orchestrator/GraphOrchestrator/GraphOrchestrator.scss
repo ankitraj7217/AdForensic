@@ -1,15 +1,36 @@
 .graph-orchestrator {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 95vh;
     overflow: hidden;
 
     &-input {
         width: 40%;
-        height: 100vh;
-        margin-block-start: 20%;
     }
 
     &-display {
         width: 60%;
+        height: 100%;
+        overflow: scroll;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .graph-orchestrator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        overflow: scroll;
+
+        &-input {
+            margin-inline-start: 5rem;
+            width: 100%;
+        }
+
+        &-display {
+            width: 100%;
+        }
     }
 }

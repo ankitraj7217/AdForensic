@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { usePapaParse } from "react-papaparse";
-import { useAdvertiserContext } from "../../Contexts/Advertiser.context";
-import { useCountriesContext } from "../../Contexts/Countries.context";
 import { handleFileUploadGeneric } from "../../Utils/fileUploadUtils";
 import "./FileUpload.scss";
 import CustomError from "../CustomError";
 
-const FlieUpload = () => {
-  const { setAdvertiserData } = useAdvertiserContext();
-  const { setCountriesData } = useCountriesContext();
+const FlieUpload = ({setAdvertiserData, setCountriesData}) => {
   const [disableCountriesUpload, setDisableCountriesUpload] = useState(true);
   const [showError, setShowError] = useState(false);
   const { readString } = usePapaParse();
