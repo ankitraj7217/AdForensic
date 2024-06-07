@@ -1,39 +1,36 @@
-import React from 'react'
-import { useAdvertiserContext } from '../../Contexts/Advertiser.context'
-import LineGraph from '../LineGraph'
-import { filterByKey, formatDate, sumByKey } from '../../Utils/genericUtils'
+import React from "react";
+import CustomLineGraph from "../CustomLineGraph";
+import { _generateAdvertiserGraphData } from "../../Utils/advertiserUtils";
+import CustomBarGraph from "../CustomBarGraph";
 
-const Advertiser = () => {
-  const { advertiserData } = useAdvertiserContext()
+const Advertiser = ({advertiserData}) => {
 
-  const _generateGraphData = (doAggregate, filterKey, filterValue) => {
-    let modifiedData = advertiserData
-    if (doAggregate) {
-      modifiedData = sumByKey(advertiserData, 'date', 'clicks')
-    } 
-    if (filterKey && filterValue) {
-        modifiedData = filterByKey(advertiserData, filterKey, filterValue);
-    }
+  console.log(advertiserData);
 
-    console.log('modifiedData: ', modifiedData)
-    return {
-      chartName: 'Line Graph',
-      data: modifiedData.map((data) => {
-        return { ...data, date: formatDate(data.date) }
-      }),
-      xAxisKey: 'date',
-      yAxisKey: 'impressions',
-    }
-  }
-
-  const lineGraphData = _generateGraphData(false, "advertiser", "Syscox")
+  const lineGraphImpressions = _generateAdvertiserGraphData(
+    advertiserData,
+    "Line Graph - Impressions",
+    "impressions"
+  );
+  const lineGraphClicks = _generateAdvertiserGraphData(
+    advertiserData,
+    "Line Graph - Clicks",
+    "clicks"
+  );
+  const barGraohCtr = _generateAdvertiserGraphData(
+    advertiserData,
+    "Bar Graph - Ctr",
+    "ctr"
+  );
 
   return (
     <section className="advertiser">
       Advertiser Data
-      <LineGraph {...lineGraphData} />
+      <CustomLineGraph {...lineGraphImpressions} />
+      <CustomLineGraph {...lineGraphClicks} />
+      <CustomBarGraph {...barGraohCtr} />
     </section>
-  )
-}
+  );
+};
 
-export default Advertiser
+export default Advertiser;
