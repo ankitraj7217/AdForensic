@@ -67,28 +67,6 @@ const FlieUpload = () => {
 
       <h2>Countries Data</h2>
       <input type="file" accept=".csv" onChange={handleFileUploadCountries} />
-      {/* <table>
-        <thead>
-          <tr>
-            <th>Advertiser</th>
-            <th>Date</th>
-            <th>Impressions</th>
-            <th>Clicks</th>
-            <th>CTR</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={index}>
-              <td>{item.advertiser}</td>
-              <td>{item.date.toLocaleDateString()}</td>
-              <td>{`${item.impressions}`}</td>
-              <td>{`${item.clicks}`}</td>
-              <td>{`${item.ctr}`}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
     </div>
   );
 };
