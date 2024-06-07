@@ -5,8 +5,6 @@ import CustomBarGraph from "../CustomBarGraph";
 
 const Advertiser = ({advertiserData}) => {
 
-  console.log(advertiserData);
-
   const lineGraphImpressions = _generateAdvertiserGraphData(
     advertiserData,
     "Line Graph - Impressions",
