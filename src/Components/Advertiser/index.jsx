@@ -23,7 +23,6 @@ const Advertiser = ({advertiserData}) => {
 
   return (
     <section className="advertiser">
-      Advertiser Data
       <CustomLineGraph {...lineGraphImpressions} />
       <CustomLineGraph {...lineGraphClicks} />
       <CustomBarGraph {...barGraohCtr} />
