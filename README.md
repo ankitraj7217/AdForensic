@@ -2,7 +2,7 @@
 1. Website Link: https://adforensics.netlify.app/
 
 2. How to run:
-    - npm ci (Ensure your node version is updated. Vite requires Node.js version 18+. 20+)
+    - npm ci (Ensure your node version is updated. Vite requires Node.js version 18+)
     - npm run dev
 
 3. Dependencies Used:
