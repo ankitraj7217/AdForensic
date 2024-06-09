@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
 import CustomSelect from "../../Components/CustomSelect";
-import { filterData, getAdvertiserNames } from "../../Utils/genericUtils";
+import { filterAdvertiserData, getAdvertiserNames } from "../../Utils/genericUtils";
 import FlieUpload from "../../Components/FileUpload";
 import StartEndDate from "../../Components/StartEndDate";
-import { organizeDataByAdvertiser } from "../../Utils/countriesUtils";
+import { organizeCountriesDataByAdvertiser } from "../../Utils/countriesUtils";
 
 import "./GraphOrchestrator.scss";
 import { ADVERTISERS_DATA, COUNTRIES_DATA } from "../../Data/sampleData";
@@ -21,12 +21,12 @@ const GraphOrchestrator = () => {
   const [endDate, setEndDate] = useState("");
   const [disableEndDate, setDisableEndDate] = useState(true);
 
-  const filteredAdvertiserData = filterData(advertiserData, advertiserName, [
+  const filteredAdvertiserData = filterAdvertiserData(advertiserData, advertiserName, [
     startDate,
     endDate,
   ]);
   const filteredCountriesData = useMemo(() => {
-    return organizeDataByAdvertiser(countriesData, advertiserName);
+    return organizeCountriesDataByAdvertiser(countriesData, advertiserName);
   }, [countriesData, advertiserName]);
   const options = getAdvertiserNames(advertiserData);
 

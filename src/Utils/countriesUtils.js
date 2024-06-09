@@ -1,6 +1,6 @@
 import { generateRandomHexColor } from "./genericUtils";
 
-export const organizeDataByAdvertiser = (array, filterAdvertiserName) => {
+export const organizeCountriesDataByAdvertiser = (array, filterAdvertiserName) => {
   const organizedData = {};
 
   array.forEach((entry) => {

@@ -1,25 +1,3 @@
-export const formatDate = (dateString) => {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const [_, month, day] = dateString.split("-").map(Number);
-  const monthName = months[month - 1]; // Months are zero-based in JavaScript
-
-  return `${monthName} ${day}`;
-};
-
 export const transformDataByMetric = (array, metric) => {
   const transformedData = new Map();
 
@@ -37,26 +15,6 @@ export const transformDataByMetric = (array, metric) => {
   return Array.from(transformedData.values());
 };
 
-// filterKey must be a date params
-export const filterByDateRange = (array, filterKey, filterRange) => {
-  if (!filterRange || filterRange.length <= 0) return array;
-  const [startDate, endDate] = filterRange.map(
-    (dateString) => new Date(dateString)
-  );
-  if (
-    isNaN(startDate.getTime()) ||
-    isNaN(endDate.getTime()) ||
-    endDate < startDate
-  )
-    return array;
-  const filteredArray = array.filter((item) => {
-    const itemDate = new Date(item[filterKey]);
-    if (isNaN(itemDate.getTime())) throw new Error("Pass Date Params");
-    return itemDate >= startDate && itemDate <= endDate;
-  });
-
-  return filteredArray;
-};
 
 export const getAllAdvertisers = (array) => {
   const advertiserSet = new Set();
