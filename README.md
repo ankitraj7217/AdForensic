@@ -1,8 +1,9 @@
 # React + Vite
+URL: https://adforensics.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. How to run
+    a) npm i
+    b) npm run dev
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Components Architecture
+    [!Components Architecture](https://asset.cloudinary.com/dspcaiix6/a29c5ce6426971c0e5be9432706e4fec)
