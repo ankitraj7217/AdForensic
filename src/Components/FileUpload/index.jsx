@@ -18,18 +18,17 @@ const FlieUpload = ({ setAdvertiserData, setCountriesData }) => {
     const valueType = ["String", "String", "Number", "Number", "String"];
 
     try {
-      await handleFileUploadGeneric(
+      const advertiserData = await handleFileUploadGeneric(
         file,
         readString,
         keys,
-        valueType,
-        setAdvertiserData
+        valueType
       );
+      setAdvertiserData(advertiserData);
+      setDisableCountriesUpload(false);
     } catch (err) {
       setShowError(true);
     }
-
-    setDisableCountriesUpload(false);
   };
 
   const handleFileUploadCountries = async (event) => {
@@ -39,13 +38,13 @@ const FlieUpload = ({ setAdvertiserData, setCountriesData }) => {
     const valueType = ["String", "Number", "String"];
 
     try {
-      await handleFileUploadGeneric(
+      const countriesData = await handleFileUploadGeneric(
         file,
         readString,
         keys,
-        valueType,
-        setCountriesData
+        valueType
       );
+      setCountriesData(countriesData);
     } catch (e) {
       setShowError(true);
     }
@@ -59,7 +58,9 @@ const FlieUpload = ({ setAdvertiserData, setCountriesData }) => {
         setShowError={setShowError}
         disappearTime={4000}
       />
-      <h2 className="file-upload__title">{t("ADVERTISER_DATA")}</h2>
+      <h2 className="file-upload__title">{`${t("UPLOAD")} ${t(
+        "ADVERTISER_DATA"
+      )}`}</h2>
       <input
         type="file"
         accept=".csv"
@@ -67,7 +68,9 @@ const FlieUpload = ({ setAdvertiserData, setCountriesData }) => {
         onChange={handleFileUploadAdvertiser}
       />
 
-      <h2 className="file-upload__title">{t("COUNTRIES_DATA")}</h2>
+      <h2 className="file-upload__title">{`${t("UPLOAD")} ${t(
+        "COUNTRIES_DATA"
+      )}`}</h2>
       <input
         type="file"
         accept=".csv"

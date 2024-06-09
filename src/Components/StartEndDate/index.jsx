@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomDate from "../CustomDate";
 import { useTranslationContext } from "../../Contexts/Translation.provider";
 
-const StartEndDate = ({
-  startDate,
-  setStartDate,
-  endDate,
-  setEndDate,
-  disableEndDate,
-  setDisableEndDate,
-}) => {
+const StartEndDate = ({ startDate, setStartDate, endDate, setEndDate }) => {
   const { t } = useTranslationContext();
+  const [disableEndDate, setDisableEndDate] = useState(true);
 
   const _handleStartDateChange = (value) => {
     setStartDate(value);

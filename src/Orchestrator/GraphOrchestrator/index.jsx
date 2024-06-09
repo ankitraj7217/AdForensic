@@ -1,9 +1,12 @@
 import React, { useMemo, useState } from "react";
 import CustomSelect from "../../Components/CustomSelect";
-import { filterData, getAdvertiserNames } from "../../Utils/genericUtils";
+import {
+  filterAdvertiserData,
+  getAdvertiserNames,
+} from "../../Utils/genericUtils";
 import FlieUpload from "../../Components/FileUpload";
 import StartEndDate from "../../Components/StartEndDate";
-import { organizeDataByAdvertiser } from "../../Utils/countriesUtils";
+import { organizeCountriesDataByAdvertiser } from "../../Utils/countriesUtils";
 
 import "./GraphOrchestrator.scss";
 import { ADVERTISERS_DATA, COUNTRIES_DATA } from "../../Data/sampleData";
@@ -19,15 +22,15 @@ const GraphOrchestrator = () => {
   const [advertiserName, setAdvertiserName] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [disableEndDate, setDisableEndDate] = useState(true);
 
-  const filteredAdvertiserData = filterData(advertiserData, advertiserName, [
-    startDate,
-    endDate,
-  ]);
+  const filteredAdvertiserData = filterAdvertiserData(
+    advertiserData,
+    advertiserName,
+    [startDate, endDate]
+  ); // filteredAdvertiserDataFormat: [{advertiser: advertiserName, date: date, impressions: no, clicks: no, ctr: no}]
   const filteredCountriesData = useMemo(() => {
-    return organizeDataByAdvertiser(countriesData, advertiserName);
-  }, [countriesData, advertiserName]);
+    return organizeCountriesDataByAdvertiser(countriesData, advertiserName);
+  }, [countriesData, advertiserName]); // filteredCountriesDataFormat: {advertiserName1: [{country: "USA", impressions: 59875}], advertiserName2: []}
   const options = getAdvertiserNames(advertiserData);
 
   return (
@@ -45,8 +48,6 @@ const GraphOrchestrator = () => {
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
-          disableEndDate={disableEndDate}
-          setDisableEndDate={setDisableEndDate}
         />
         <FlieUpload
           setAdvertiserData={setAdvertiserData}
