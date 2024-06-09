@@ -1,7 +1,7 @@
 import React from "react";
-import CustomLineGraph from "../CustomLineGraph";
+import CustomLineGraph from "../ChartsAndGraphs/CustomLineGraph";
 import { _generateAdvertiserGraphData } from "../../Utils/advertiserUtils";
-import CustomBarGraph from "../CustomBarGraph";
+import CustomBarGraph from "../ChartsAndGraphs/CustomBarGraph";
 import { useTranslationContext } from "../../Contexts/Translation.provider";
 
 const Advertiser = ({advertiserData}) => {

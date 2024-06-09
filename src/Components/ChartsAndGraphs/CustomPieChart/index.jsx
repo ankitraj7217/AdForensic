@@ -1,9 +1,9 @@
 import React from "react";
 import { PieChart, ResponsiveContainer, Pie, Tooltip, Legend } from "recharts";
 import CustomTooltip from "../CustomTooltip";
-import { GRAPH_COLOR } from "../../Constants/colors";
+import { GRAPH_COLOR } from "../../../Constants/colors";
 import CustomLegend from "../CustomLegend";
-import { useTranslationContext } from "../../Contexts/Translation.provider";
+import { useTranslationContext } from "../../../Contexts/Translation.provider";
 
 const CustomPieChart = ({ data, radiusObj = [] }) => {
   const { t } = useTranslationContext();

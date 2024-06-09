@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import CustomPieChart from "../CustomPieChart";
+import CustomPieChart from "../ChartsAndGraphs/CustomPieChart";
 import {
   generateRandomRadiusForPieChart
 } from "../../Utils/countriesUtils";

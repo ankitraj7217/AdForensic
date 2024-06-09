@@ -1,7 +1,8 @@
 import React from "react";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
+  Rectangle,
   XAxis,
   YAxis,
   Tooltip,
@@ -9,11 +10,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import CustomTooltip from "../CustomTooltip";
-import { GRAPH_COLOR } from "../../Constants/colors";
+import { GRAPH_COLOR } from "../../../Constants/colors";
 
-const CustomLineGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
+const CustomBarGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
   return (
-    <div className="custom-line" role="presentation">
+    <>
       <h2>{chartName}</h2>
       <ResponsiveContainer
         width="100%"
@@ -21,7 +22,7 @@ const CustomLineGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
         minWidth={`500px`}
         minHeight={`300px`}
       >
-        <LineChart
+        <BarChart
           width={500}
           height={300}
           data={data}
@@ -47,19 +48,18 @@ const CustomLineGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
           <Legend />
           {yAxisKeys.map((yAxisKey, idx) => {
             return (
-              <Line
-                type="monotone"
+              <Bar
                 dataKey={yAxisKey}
-                stroke={GRAPH_COLOR?.[idx] ?? "#82ca9d"}
-                activeDot={{ r: 8 }}
+                fill={GRAPH_COLOR?.[idx] ?? "#8884d8"}
+                activeBar={<Rectangle fill="pink" stroke="blue" />}
                 key={yAxisKey}
               />
             );
           })}
-        </LineChart>
+        </BarChart>
       </ResponsiveContainer>
-    </div>
+    </>
   );
 };
 
-export default CustomLineGraph;
+export default CustomBarGraph;
