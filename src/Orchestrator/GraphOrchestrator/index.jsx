@@ -1,15 +1,15 @@
 import React, { useMemo, useState } from "react";
 import CustomSelect from "../../Components/CustomSelect";
-import Advertiser from "../../Components/Advertiser";
 import { filterData, getAdvertiserNames } from "../../Utils/genericUtils";
 import FlieUpload from "../../Components/FileUpload";
-import Countries from "../../Components/Countries";
 import StartEndDate from "../../Components/StartEndDate";
 import { organizeDataByAdvertiser } from "../../Utils/countriesUtils";
 
 import "./GraphOrchestrator.scss";
 import { ADVERTISERS_DATA, COUNTRIES_DATA } from "../../Data/sampleData";
 import { useTranslationContext } from "../../Contexts/Translation.provider";
+import CountriesCharts from "../../Components/CountriesCharts";
+import AdvertiserGraphs from "../../Components/AdvertiserGraphs";
 
 const GraphOrchestrator = () => {
   const { t } = useTranslationContext();
@@ -54,8 +54,8 @@ const GraphOrchestrator = () => {
         />
       </section>
       <section className="graph-orchestrator-display">
-        <Advertiser advertiserData={filteredAdvertiserData} />
-        <Countries countriesData={filteredCountriesData} />
+        <AdvertiserGraphs advertiserData={filteredAdvertiserData} />
+        <CountriesCharts countriesData={filteredCountriesData} />
       </section>
     </main>
   );

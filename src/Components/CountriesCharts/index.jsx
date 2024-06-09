@@ -4,7 +4,7 @@ import {
   generateRandomRadiusForPieChart
 } from "../../Utils/countriesUtils";
 
-const Countries = ({ countriesData }) => {
+const CountriesCharts = ({ countriesData }) => {
   
   const randomRadiusObj = generateRandomRadiusForPieChart(countriesData);
 
@@ -15,4 +15,4 @@ const Countries = ({ countriesData }) => {
   );
 };
 
-export default memo(Countries);
+export default memo(CountriesCharts);

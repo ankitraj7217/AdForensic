@@ -4,7 +4,7 @@ import { _generateAdvertiserGraphData } from "../../Utils/advertiserUtils";
 import CustomBarGraph from "../ChartsAndGraphs/CustomBarGraph";
 import { useTranslationContext } from "../../Contexts/Translation.provider";
 
-const Advertiser = ({advertiserData}) => {
+const AdvertiserGraphs = ({advertiserData}) => {
   const { t } = useTranslationContext();
 
   const lineGraphImpressions = _generateAdvertiserGraphData(
@@ -32,4 +32,4 @@ const Advertiser = ({advertiserData}) => {
   );
 };
 
-export default Advertiser;
+export default AdvertiserGraphs;
