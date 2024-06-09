@@ -20,3 +20,7 @@ export const filterData = (array, filterAdvertiserValue, dateRange) => {
 export const getAdvertiserNames = (array) => {
   return ["All", ...Array.from(new Set(array?.map((ele) => ele.advertiser)))];
 };
+
+export const capitalizeFirstLetter = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};

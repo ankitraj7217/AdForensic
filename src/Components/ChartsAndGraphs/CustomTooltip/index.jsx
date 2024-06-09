@@ -1,5 +1,6 @@
 import React from "react";
 import "./CustomTooltip.scss";
+import { capitalizeFirstLetter } from "../../../Utils/genericUtils";
 
 // if keys is provided -> render only those keys
 const CustomTooltip = ({ active, payload, keys = [] }) => {
@@ -13,11 +14,11 @@ const CustomTooltip = ({ active, payload, keys = [] }) => {
         {keys && keys.length > 0
           ? keys.map((key) => {
               const value = tooltipPayload[key];
-              return <li key={key}>{`${key}: ${value}`} </li>;
+              return <li key={key}>{`${capitalizeFirstLetter(key)}: ${value}`} </li>;
             })
           : Object.keys(tooltipPayload).map((key) => {
               const value = tooltipPayload[key];
-              return <li key={key}>{`${key}: ${value}`}</li>;
+              return <li key={key}>{`${capitalizeFirstLetter(key)}: ${value}`}</li>;
             })}
 
         {}
