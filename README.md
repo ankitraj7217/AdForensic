@@ -5,7 +5,7 @@
     - npm ci (Ensure your node version is updated. Vite requires Node.js version 18+. 20+)
     - npm run dev
 
-3. Tech Stack and Libraries Used:
+3. Dependencies Used:
     - React
     - Scss
     - recharts (to render values on graphs / charts)
