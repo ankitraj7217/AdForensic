@@ -12,6 +12,22 @@ import {
 import CustomTooltip from "../CustomTooltip";
 import { GRAPH_COLOR } from "../../../Constants/colors";
 
+{
+  /**
+  Sample Params Data Format -
+  @param chartName -> "Some Name"
+  @param data - [
+    {
+      date: "2016-02-01",
+      Syscox: 7000,
+      Naparos: 8000, -> can be more too. it is dynamic -> depends on what is passed in yAxis Keys
+    }, {}, {}..
+    ]
+  @param xAxisKey - date
+  @param yAxisKeys - ['Syscox', 'Naparos']
+*/
+}
+
 const CustomBarGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
   return (
     <>

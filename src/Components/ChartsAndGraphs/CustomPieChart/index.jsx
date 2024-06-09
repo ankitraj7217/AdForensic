@@ -5,9 +5,33 @@ import { GRAPH_COLOR } from "../../../Constants/colors";
 import CustomLegend from "../CustomLegend";
 import { useTranslationContext } from "../../../Contexts/Translation.provider";
 
+{
+  /**
+  Sample data format:
+  @param data - {
+      "Syscox": [{impressions, country}, {}, {}, ...]
+      "Naparos": [{impressions, country}, {}, {}, ...]
+    }  
+
+  @param radiusObj - [
+    {
+        "key": "Syscox",
+        "innerRadius": 98,
+        "outerRadius": 118,
+        "color": "#b46110"
+    },
+    {
+        "key": "Naparos",
+        "innerRadius": 138,
+        "outerRadius": 158,
+        "color": "#53c621"
+    }
+]
+*/
+}
 const CustomPieChart = ({ data, radiusObj = [] }) => {
   const { t } = useTranslationContext();
-  
+
   return (
     <>
       <h3>{t("PIE_CHART")}</h3>
