@@ -20,7 +20,7 @@ export const organizeDataByAdvertiser = (array, filterAdvertiserName) => {
 };
 
 export const generateRandomRadiusForPieChart = (array) => {
-  const MIN_RADIUS = 80;
+  const MIN_RADIUS = 60;
   const RADIUS_RANGE = 50;
   const OUTER_INNER_DIFF = 20;
   const CONCENTRIC_CIRCLE_RADIUS_DIFF = 20;
