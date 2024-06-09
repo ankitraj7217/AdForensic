@@ -13,7 +13,7 @@ const CustomError = ({ message, showError, setShowError, disappearTime }) => {
   }, [showError, setShowError]);
 
   return (
-    <div className={`custom-error ${showError ? "show" : "hide"}`}>
+    <div className={`custom-error ${showError ? "show" : "hide"}`} role="alert">
       <p>{message}</p>
     </div>
   );

@@ -16,7 +16,7 @@ const CustomSelect = ({
   return (
     <div className="custom-select">
       <h3>{heading}</h3>
-      <div className="custom-select-drawer">
+      <div className="custom-select-drawer" role="option">
         <select
           value={currOption}
           onChange={_onChangeOption}

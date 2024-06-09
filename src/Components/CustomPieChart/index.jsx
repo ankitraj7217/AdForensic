@@ -5,10 +5,6 @@ import { GRAPH_COLOR } from "../../Constants/colors";
 import CustomLegend from "../CustomLegend";
 import { useTranslationContext } from "../../Contexts/Translation.provider";
 
-const renderCustomLegend = (colors) => {
-  <div></div>;
-};
-
 const CustomPieChart = ({ data, radiusObj = [] }) => {
   const { t } = useTranslationContext();
   

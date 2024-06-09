@@ -13,7 +13,7 @@ import { GRAPH_COLOR } from "../../Constants/colors";
 
 const CustomLineGraph = ({ chartName, data, xAxisKey, yAxisKeys }) => {
   return (
-    <div className="custom-line">
+    <div className="custom-line" role="presentation">
       <h2>{chartName}</h2>
       <ResponsiveContainer
         width="100%"

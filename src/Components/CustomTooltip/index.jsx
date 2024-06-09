@@ -7,21 +7,21 @@ const CustomTooltip = ({ active, payload, keys = [] }) => {
     const tooltipPayload = payload?.[0]?.["payload"];
 
     return (
-      <div
+      <ul
         className="custom-tooltip"
       >
         {keys && keys.length > 0
           ? keys.map((key) => {
               const value = tooltipPayload[key];
-              return <p key={key}>{`${key}: ${value}`} </p>;
+              return <li key={key}>{`${key}: ${value}`} </li>;
             })
           : Object.keys(tooltipPayload).map((key) => {
               const value = tooltipPayload[key];
-              return <p key={key}>{`${key}: ${value}`}</p>;
+              return <li key={key}>{`${key}: ${value}`}</li>;
             })}
 
         {}
-      </div>
+      </ul>
     );
   }
 
