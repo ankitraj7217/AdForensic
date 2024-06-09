@@ -23,7 +23,7 @@
     - Sample data is already available to view.
     - Filtering is available by date range and advertiser name.
     - Upload CSV files in the specified format, ensuring consistent column order as mentioned under "Please Note."
-    - Graph adjusts dynamically upon data upload, supporting multiple advertisers.
+    - The graph dynamically adjusts upon data upload, supporting multiple advertisers, not necessarily limited to Syscox and Naparos.
 
 6. Components Architecture:
 
