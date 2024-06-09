@@ -39,3 +39,4 @@
     - Enhance Accessibility
     - WebApp is responsive; however, when accessed on a mobile device, a slight horizontal scroll is required to view the full graph.
     - Graphs and charts can be enhanced for a more visually appealing presentation, particularly the pie chart.
+    - Helper tooltips can be provided, and error messages can be generalized to focus on specific errors, although custom error component is already generic. Currently, error messages lack specificity.
