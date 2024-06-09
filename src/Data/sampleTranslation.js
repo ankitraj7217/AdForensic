@@ -1,4 +1,5 @@
 export const TRANSLATION_DATA = {
+    "AD_FORENSICS": "Ad Forensics",
     "SELECT_ADVERTISER": "Select Advertiser",
     "START_DATE": "Start Date",
     "END_DATE": "End Date",

@@ -1,4 +1,5 @@
 import React from "react";
+import "./CustomTooltip.scss";
 
 // if keys is provided -> render only those keys
 const CustomTooltip = ({ active, payload, keys = [] }) => {
@@ -7,12 +8,7 @@ const CustomTooltip = ({ active, payload, keys = [] }) => {
 
     return (
       <div
-        style={{
-          backgroundColor: "white",
-          border: "1px solid #ccc",
-          padding: "10px",
-          color: "black",
-        }}
+        className="custom-tooltip"
       >
         {keys && keys.length > 0
           ? keys.map((key) => {

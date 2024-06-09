@@ -1,0 +1,41 @@
+:root {
+  --primary-text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
+  --color-scheme: dark;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: var(--color-scheme);
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-color-scheme: light) {
+    --primary-text-color: #213547;
+    --background-color: #ffffff;
+    --color-scheme: light;
+  }
+
+  &[class*="mode"] {
+    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    color-scheme: var(--color-scheme);
+  }
+}
+
+.dark-mode {
+  --primary-text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
+  --color-scheme: dark;
+}
+
+.light-mode {
+  --primary-text-color: #213547;
+  --background-color: #ffffff;
+  --color-scheme: light;
+}

@@ -1,14 +1,15 @@
 .custom-date {
-    width: 15rem;
-    height: 4rem; 
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    padding: 0 1rem;
-    cursor: pointer;
-    outline: none;
-  
-    &:disabled {
-      cursor: not-allowed;
-    }
+  width: 15rem;
+  height: 4rem;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+
+  &:disabled {
+    cursor: not-allowed;
   }
-  
+}
