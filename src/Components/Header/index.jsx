@@ -22,6 +22,8 @@ const Header = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  // if (Math.random() > 0.5) throw new Error("Please upload correct file with following format")
+
   return (
     <header className="header">
       <h1 className="header-title">{t("AD_FORENSICS")}</h1>
