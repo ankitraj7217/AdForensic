@@ -16,10 +16,11 @@ const TranslationContextProvider = ({ children }) => {
   };
   useEffect(() => {
     // can use to call API and update it.
+    // setTranslation to be used here
   }, []);
 
   return (
-    <TranslationContext.Provider value={{ t, setTranslation }}>
+    <TranslationContext.Provider value={{ t }}>
       {children}
     </TranslationContext.Provider>
   );
