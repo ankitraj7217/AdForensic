@@ -2,8 +2,7 @@ export const handleFileUploadGeneric = async (
   file,
   readString,
   keys = [],
-  valueType = [],
-  setState
+  valueType = []
 ) => {
   return new Promise((res, rej) => {
     const reader = new FileReader();
@@ -25,7 +24,6 @@ export const handleFileUploadGeneric = async (
 
               return finResult;
             });
-            setState(extractedData);
             res(extractedData);
           },
         });
