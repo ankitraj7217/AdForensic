@@ -13,17 +13,17 @@
     - react-error-boundary
 
 4. Please note:
-    - File uploaded under Upload Advertiser Data should be in the following format - (Advertiser, Date, Impressions, Clicks, CTR).
-    - File uploaded under Upload Countries Data should be in the following format - (Advertiser, Impressions, Country).
-    - End date will only be enabled after start date is selected.
-    - Upload Countries Data will only be enabled when Advertiser Data is already uploaded.
-    - Select Advertiser options depend upon the advertiser data.
+    - The file uploaded under "Upload Advertiser Data" should adhere to the following format: (Advertiser, Date, Impressions, Clicks, CTR).
+    - The file uploaded under "Upload Countries Data" should adhere to the following format: (Advertiser, Impressions, Country).
+    - End date selection is enabled after a start date is chosen, and the date-based filter is applied only when both start and end dates are selected.
+    - The option to upload countries data will only be enabled once advertiser data has been uploaded.
+    - The selection of advertiser options depends on the uploaded advertiser data.
 
 5. How to use:
     - Sample data is already available to view.
-    - You can select a date range to filter and Advertiser Name to filter.
-    - You can upload csv files in above mentioned format and it can be dynamic, but ensure column names are in same order.
-    - Graph will automatically adjust on upload of data.
+    - Filtering is available by date range and advertiser name.
+    - Upload CSV files in the specified format, ensuring consistent column order as mentioned under "Please Note."
+    - Graph adjusts dynamically upon data upload, supporting multiple advertisers.
 
 6. Components Architecture:
 
@@ -37,3 +37,5 @@
 8. Further Enhancements:
     - Add unit testing via react-testing-library
     - Enhance Accessibility
+    - WebApp is responsive; however, when accessed on a mobile device, a slight horizontal scroll is required to view the full graph.
+    - Graphs and charts can be enhanced for a more visually appealing presentation, particularly the pie chart.
