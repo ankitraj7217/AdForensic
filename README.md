@@ -2,7 +2,7 @@
 1. Website Link: https://adforensics.netlify.app/
 
 2. How to run:
-    - npm i
+    - npm ci (Ensure your node version is updated. Vite requires Node.js version 18+. 20+)
     - npm run dev
 
 3. Tech Stack and Libraries Used:
@@ -24,6 +24,7 @@
     - Filtering is available by date range and advertiser name.
     - Upload CSV files in the specified format, ensuring consistent column order as mentioned under "Please Note."
     - The graph dynamically adjusts upon data upload, supporting multiple advertisers, not necessarily limited to Syscox and Naparos.
+    - Hover over the graph and pie chart to view details.
 
 6. Components Architecture:
 
