@@ -2,8 +2,20 @@
 URL: https://adforensics.netlify.app/
 
 1. How to run
-    - a) npm i
-    - b) npm run dev
+    - npm i
+    - npm run dev
 
-2. Components Architecture
-    ![<img src="https://asset.cloudinary.com/dspcaiix6/a29c5ce6426971c0e5be9432706e4fec" alt="Components Architecture" />](https://res.cloudinary.com/dspcaiix6/image/upload/v1717940458/AdForensics.drawio_fsxst5.svg)
+2. Tech Stack and Libraries Used:
+    - React
+    - Scss
+    - recharts (to render values on graphs / charts)
+    - react-papaparse (to parse csv)
+    - react-error-boundary
+
+3. Components Architecture:
+
+    ![Components Architecture](https://res.cloudinary.com/dspcaiix6/image/upload/v1717940458/AdForensics.drawio_fsxst5.svg)
+
+4. Components Detailing:
+   ![Components States and Props](https://res.cloudinary.com/dspcaiix6/image/upload/v1717945767/AdForensics-States-Props.drawio_cxqyxr.svg)
+
