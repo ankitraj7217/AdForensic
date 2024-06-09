@@ -6,4 +6,4 @@ URL: https://adforensics.netlify.app/
     - b) npm run dev
 
 2. Components Architecture
-    <img src="https://asset.cloudinary.com/dspcaiix6/a29c5ce6426971c0e5be9432706e4fec" alt="Components Architecture" />
+    ![<img src="https://asset.cloudinary.com/dspcaiix6/a29c5ce6426971c0e5be9432706e4fec" alt="Components Architecture" />](https://res.cloudinary.com/dspcaiix6/image/upload/v1717940458/AdForensics.drawio_fsxst5.svg)
